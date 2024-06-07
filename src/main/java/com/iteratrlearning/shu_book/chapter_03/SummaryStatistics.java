@@ -1,5 +1,13 @@
 package com.iteratrlearning.shu_book.chapter_03;
 
+/**
+ * 다양한 형식의 보고서를 작성하기 위한 value object
+ * 현재는 수많은 데이터가 클래스 간에 전달 및 이동이 되고 있음
+ * 향후에 애플리케이션이 더 확장되면, 논리적으로 계층(Layer)를 나누어야함 
+ * 
+ * 계층(Layer) => SW 아키텍쳐와 연관됨
+ * 이정도에서 데이터 이동은 계층(Layer) 간 이동이 발생 => DTO(Data Transfer Object)
+ */
 public class SummaryStatistics {
     private final double sum;
     private final double max;

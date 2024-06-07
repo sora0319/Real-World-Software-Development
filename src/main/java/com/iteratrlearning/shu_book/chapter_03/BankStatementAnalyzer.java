@@ -22,6 +22,8 @@ public class BankStatementAnalyzer {
 
         final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
 
+        // chapter3 의 새로운 부분
+        
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
         final SummaryStatistics summaryStatistics = bankStatementProcessor.summarizeTransactions();
