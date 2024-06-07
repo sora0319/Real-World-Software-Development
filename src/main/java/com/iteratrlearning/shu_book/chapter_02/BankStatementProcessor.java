@@ -3,6 +3,10 @@ package com.iteratrlearning.shu_book.chapter_02;
 import java.time.Month;
 import java.util.List;
 
+/**
+ * 다양한 조건의 입출금 총액을 계산하는 책임을 지고 있는 클래스.
+ * SRP 적용 => 응집도 향상.
+ */
 public class BankStatementProcessor {
     private final List<BankTransaction> bankTransactions;
 
@@ -10,6 +14,7 @@ public class BankStatementProcessor {
         this.bankTransactions = bankTransactions;
     }
 
+    // 입출금 내역의 총액 계산 : 조건 없음
     public double calculateTotalAmount() {
         double total = 0;
         for (final BankTransaction bankTransaction : bankTransactions) {
@@ -18,17 +23,20 @@ public class BankStatementProcessor {
         return total;
     }
 
+    // 입출금 내역의 총액 계산 : 월에 대한 조건
     public double calculateTotalInMonth(final Month month) {
         double total = 0;
         for (final BankTransaction bankTransaction : bankTransactions) {
+        	// 입출금 내역을 조회 조건 : 달
             if (bankTransaction.getDate().getMonth() == month) {
-
+            		
                 total += bankTransaction.getAmount();
             }
         }
         return total;
     }
 
+    // 입출금 내역의 총액 계산 : 입출금 내역에 대한 조건
     public double calculateTotalForCategory(final String category) {
         double total = 0;
         for (final BankTransaction bankTransaction : bankTransactions) {
