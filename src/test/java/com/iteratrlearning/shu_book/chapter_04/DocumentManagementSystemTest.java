@@ -30,10 +30,13 @@ public class DocumentManagementSystemTest
     @Test
     public void shouldImportFile() throws Exception
     {
+    	//given : 검증용 데이터 준비
         system.importFile(LETTER);
 
+        //when : 문서를 받아 저장
         final Document document = onlyDocument();
 
+        // then : 검증
         assertAttributeEquals(document, Attributes.PATH, LETTER);
     }
     // end::shouldImportFile[]
@@ -100,6 +103,7 @@ public class DocumentManagementSystemTest
         system.importFile(REPORT);
         system.importFile(XRAY);
 
+        // 검색 조건 문자열
         final List<Document> documents = system.search("patient:Joe,body:Diet Coke");
         assertThat(documents, hasSize(1));
 

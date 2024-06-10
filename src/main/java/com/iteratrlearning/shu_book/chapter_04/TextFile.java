@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.toList;
 // tag::classDefinition[]
 class TextFile {
     private final Map<String, String> attributes;
-    private final List<String> lines;
+    private final List<String> lines; // 파일의 내용을 저장하는 리스트
 
     // class continues ...
 // end::classDefinition[]
