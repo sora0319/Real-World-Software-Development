@@ -2,6 +2,7 @@ package com.iteratrlearning.shu_book.chapter_05;
 
 public class Rule {
 
+	// 함수형 인터페이스
     private Condition condition;
     private Action action;
 
